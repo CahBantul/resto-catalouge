@@ -1,8 +1,8 @@
 import API_ENDPOINT from '../globals/api-endpoint';
 
-class TheMovieDbSource {
-  static async nowPlayingMovies() {
-    const response = await fetch(API_ENDPOINT.NOW_PLAYING);
+class RestaurantsSource {
+  static async homeRestaurants() {
+    const response = await fetch(API_ENDPOINT.HOME);
     const responseJson = await response.json();
     return responseJson.restaurants;
   }
@@ -19,4 +19,4 @@ class TheMovieDbSource {
   }
 }
 
-export default TheMovieDbSource;
+export default RestaurantsSource;

@@ -1,7 +1,7 @@
-import TheMovieDbSource from '../../data/themoviedb-source';
-import { createMovieItemTemplate } from '../templates/template-creator';
+import RestaurantsSource from '../../data/restaurants-source';
+import { createRestaurantItemTemplate } from '../templates/template-creator';
 
-const NowPlaying = {
+const Home = {
   async render() {
     return `
       <div class="content">
@@ -14,12 +14,12 @@ const NowPlaying = {
   },
 
   async afterRender() {
-    const movies = await TheMovieDbSource.nowPlayingMovies();
+    const movies = await RestaurantsSource.homeRestaurants();
     const moviesContainer = document.querySelector('#movies');
     movies.forEach((movie) => {
-      moviesContainer.innerHTML += createMovieItemTemplate(movie);
+      moviesContainer.innerHTML += createRestaurantItemTemplate(movie);
     });
   },
 };
 
-export default NowPlaying;
+export default Home;

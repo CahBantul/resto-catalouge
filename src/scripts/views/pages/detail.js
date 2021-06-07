@@ -1,5 +1,5 @@
 import UrlParser from '../../routes/url-parser';
-import TheMovieDbSource from '../../data/themoviedb-source';
+import RestaurantsSource from '../../data/restaurants-source';
 import { createMovieDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
@@ -13,7 +13,7 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const movie = await TheMovieDbSource.detailMovie(url.id);
+    const movie = await RestaurantsSource.detailMovie(url.id);
     const movieContainer = document.querySelector('#movie');
     movieContainer.innerHTML = createMovieDetailTemplate(movie);
 
