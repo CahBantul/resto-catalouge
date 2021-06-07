@@ -6,7 +6,7 @@ const Home = {
     return `
       <div class="content">
         <h2 class="content__heading">List Restaurants</h2>
-        <div id="movies" class="movies">
+        <div id="restaurants" class="restaurants">
 
         </div>
       </div>
@@ -14,10 +14,10 @@ const Home = {
   },
 
   async afterRender() {
-    const movies = await RestaurantsSource.homeRestaurants();
-    const moviesContainer = document.querySelector('#movies');
-    movies.forEach((movie) => {
-      moviesContainer.innerHTML += createRestaurantItemTemplate(movie);
+    const restaurants = await RestaurantsSource.homeRestaurants();
+    const restaurantsContainer = document.querySelector('#restaurants');
+    restaurants.forEach((movie) => {
+      restaurantsContainer.innerHTML += createRestaurantItemTemplate(movie);
     });
   },
 };

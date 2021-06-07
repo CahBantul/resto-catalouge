@@ -1,6 +1,6 @@
 const CONFIG = {
   KEY: 'fa48bcc48e1a4738574a4e86b92b3776',
-  BASE_URL: 'https://restaurant-api.dicoding.dev/list',
+  BASE_URL: 'https://restaurant-api.dicoding.dev/',
   BASE_IMAGE_URL: 'https://restaurant-api.dicoding.dev/images/small/',
   DEFAULT_LANGUAGE: 'en-us',
   CACHE_NAME: 'RestaurantsCatalouge',
