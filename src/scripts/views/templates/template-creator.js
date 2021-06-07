@@ -3,14 +3,12 @@ import CONFIG from '../../globals/config';
 const createRestaurantDetailTemplate = (restaurant) => `
   <h2 class="restaurant__title">${restaurant.name}</h2>
   <img class="restaurant__poster" src="${
-    CONFIG.BASE_IMAGE_URL + restaurant.pictureId
-  }" alt="${restaurant.title}" />
+  CONFIG.BASE_IMAGE_URL + restaurant.pictureId
+}" alt="${restaurant.title}" />
   <div class="restaurant__info">
   <h3>Information</h3>
     <h4>Foods</h4>
-  <p>  ${restaurant.menus.foods.map((food) => {
-    return ' ' + food.name;
-  })} </p>
+  <p>  ${restaurant.menus.foods.map((food) => ` ${food.name}`)} </p>
     <h4>Release Date</h4>
     <p>${restaurant.release_date}</p>
     <h4>Duration</h4>
@@ -31,8 +29,8 @@ const createRestaurantItemTemplate = (restaurant) => `
             src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
         <div class="restaurant-item__header__rating">
             <p>⭐️<span class="restaurant-item__header__rating__score">${
-              restaurant.rating
-            }</span></p>
+  restaurant.rating
+}</span></p>
         </div>
     </div>
     <div class="restaurant-item__content">

@@ -3,6 +3,17 @@
   margin: 0;
 }
 
+.skip-link {
+  position: absolute;
+  top: -65px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  font-size: 14px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: white;
@@ -80,6 +91,38 @@ a {
   padding: 8px;
   margin-bottom: 5px;
   width: 100%;
+}
+
+/** Jumbotron **/
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+  background-image: url('/images/heros/hero-image_2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-color: green;
+}
+
+.hero__inner {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.hero__title {
+  color: yellow;
+  font-weight: 1000;
+  font-size: 36px;
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 /*
