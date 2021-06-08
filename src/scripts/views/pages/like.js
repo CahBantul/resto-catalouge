@@ -1,4 +1,4 @@
-import FavoriteMovieIdb from '../../data/favorite-restaurant';
+import FavoriteRestaurant from '../../data/favorite-restaurant';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
 
 const Like = {
@@ -14,11 +14,11 @@ const Like = {
   },
 
   async afterRender() {
-    const restaurants = await FavoriteMovieIdb.getAllMovies();
+    const restaurants = await FavoriteRestaurant.getAllRestaurants();
     const restaurantsContainer = document.querySelector('#restaurants');
     restaurants.forEach((restaurant) => {
-      restaurantsContainer.innerHTML
-        += createRestaurantItemTemplate(restaurant);
+      restaurantsContainer.innerHTML +=
+        createRestaurantItemTemplate(restaurant);
     });
   },
 };
