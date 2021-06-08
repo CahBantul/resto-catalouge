@@ -24,8 +24,9 @@ const Detail = {
         id: restaurant.id,
         name: restaurant.name,
         description: restaurant.description,
-        backdrop_path: restaurant.backdrop_path,
-        vote_average: restaurant.vote_average,
+        pictureId: restaurant.pictureId,
+        rating: restaurant.rating,
+        city: restaurant.city,
       },
     });
   },
