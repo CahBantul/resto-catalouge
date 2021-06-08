@@ -1,7 +1,7 @@
 {
-  "name": "Movie Catalogue Lite",
-  "short_name": "Movie Lite",
-  "description": "Free Catalogue Movie for you",
+  "name": "Restaurant Catalogue Lite",
+  "short_name": "RestaurantLite",
+  "description": "Free Catalogue Restaurantfor you",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
