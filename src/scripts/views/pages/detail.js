@@ -2,7 +2,6 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantsSource from '../../data/restaurants-source';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
-import AddReview from '../../utils/add-review';
 
 const Detail = {
   async render() {
@@ -18,9 +17,6 @@ const Detail = {
 
     const restaurantContainer = document.querySelector('#restaurant');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
-
-    const buttonReview = document.querySelector('#button_review');
-    buttonReview.addEventListener('click', AddReview);
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),

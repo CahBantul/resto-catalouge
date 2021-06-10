@@ -38,20 +38,6 @@ const createRestaurantDetailTemplate = (restaurant) => `
     )
     .join('<br />')}
     </p>
-    <div id="review_form">
-      <div>  
-        <h2>Add Review</h2> 
-      </div>   
-      <div>
-          <input type="text" name="name" id="name" value="" placeholder="Name">
-      </div>
-      <div>
-          <textarea rows="5" name="comment" id="comment" placeholder="your Review"></textarea>
-      </div>
-      <div>
-          <button id="button_review">Add Komentar </button>
-      </div> 
-    </div>
   </div>
 `;
 
