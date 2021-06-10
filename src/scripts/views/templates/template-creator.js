@@ -13,23 +13,45 @@ const createRestaurantDetailTemplate = (restaurant) => `
     <p>${restaurant.rating}</p>
   </div>
   <div class="restaurant__body">
-  <h4>Foods</h4>
-  <p>  ${restaurant.menus.foods.map((food) => ` ${food.name}`)} </p>
-  <br />
+    <h4>Categories</h4>
+    <p>  ${restaurant.categories
+    .map((category) => `- ${category.name}`)
+    .join('<br />')} </p>
+      <br />
+    <h4>Foods</h4>
+    <p>  ${restaurant.menus.foods.map((food) => ` ${food.name}`)} </p>
+      <br />
     <h4>Beverages</h4>
     <p>${restaurant.menus.drinks.map((drink) => ` ${drink.name}`)}</p>
-  <br />
+      <br />
     <h3>Customer Reviews</h3>
-  <br />
-  <p>${restaurant.customerReviews
+      <br />
+    <p>${restaurant.customerReviews
     .map(
-      (customer) => `<ul>
-  <li>Name: ${customer.name}</li>
-  <li>Date: ${customer.date}</li>
-  <li>Review: ${customer.review}</li>
-</ul>`,
+      (customer) => `
+          <ul>
+            <li>Name: ${customer.name}</li>
+            <li>Date: ${customer.date}</li>
+            <li>Review: ${customer.review}</li>
+          </ul>
+          `,
     )
-    .join('<br />')}</p>
+    .join('<br />')}
+    </p>
+    <div id="review_form">
+      <div>  
+        <h2>Add Review</h2> 
+      </div>   
+      <div>
+          <input type="text" name="name" id="name" value="" placeholder="Name">
+      </div>
+      <div>
+          <textarea rows="5" name="comment" id="comment" placeholder="your Review"></textarea>
+      </div>
+      <div>
+          <button id="button_review">Add Komentar </button>
+      </div> 
+    </div>
   </div>
 `;
 
