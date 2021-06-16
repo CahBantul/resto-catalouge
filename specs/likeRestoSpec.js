@@ -1,11 +1,11 @@
 import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
 import FavoriteRestaurant from '../src/scripts/data/favorite-restaurant';
 
-describe('Liking A Resto', () => {
-  const addLikeButtonContainer = () => {
-    document.body.innerHTML = '<div id="likeButtonContainer"></div>';
-  };
+const addLikeButtonContainer = () => {
+  document.body.innerHTML = '<div id="likeButtonContainer"></div>';
+};
 
+describe('Liking A Resto', () => {
   beforeEach(() => {
     addLikeButtonContainer();
   });
@@ -62,8 +62,10 @@ describe('Liking A Resto', () => {
 
     // Tambahkan film dengan ID 1 ke daftar film yang disukai
     await FavoriteRestaurant.putRestaurant({ id: 1 });
+
     // Simulasikan pengguna menekan tombol suka film
     document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
     // tidak ada film yang ganda
     expect(await FavoriteRestaurant.getAllRestaurants()).toEqual([{ id: 1 }]);
 
