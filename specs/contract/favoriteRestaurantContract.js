@@ -9,7 +9,7 @@ const itActsAsFavoriteRestaurantModel = (favoriteRestaurant) => {
   });
 
   it('should refuse a restaurant from being added if it does not have the correct property', async () => {
-    favoriteRestaurant.putMovie({ aProperty: 'property' });
+    favoriteRestaurant.putRestaurant({ aProperty: 'property' });
 
     expect(await favoriteRestaurant.getAllRestaurants()).toEqual([]);
   });
