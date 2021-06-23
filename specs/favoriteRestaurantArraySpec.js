@@ -8,7 +8,7 @@ const FavoriteRestaurantArray = {
       return;
     }
 
-    return favoriteRestaurants.find((restaurant) => restaurant.id == id);
+    return favoriteRestaurants.find((restaurant) => restaurant.id === id);
   },
 
   getAllRestaurants() {
@@ -32,7 +32,7 @@ const FavoriteRestaurantArray = {
     // cara boros menghapus restaurant dengan meng-copy restaurant yang ada
     // kecuali restaurant dengan id == id
     favoriteRestaurants = favoriteRestaurants.filter(
-      (restaurant) => restaurant.id !== id
+      (restaurant) => restaurant.id !== id,
     );
   },
 };
