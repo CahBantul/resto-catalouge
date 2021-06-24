@@ -146,8 +146,7 @@ describe('Searching restaurants', () => {
       document
         .getElementById('restaurant-search-container')
         .addEventListener('restaurants:searched:updated', () => {
-          const restaurantTitles =
-            document.querySelectorAll('.restaurant__title');
+          const restaurantTitles = document.querySelectorAll('.restaurant__title');
           expect(restaurantTitles.item(0).textContent).toEqual('resto abc');
           expect(restaurantTitles.item(1).textContent).toEqual(
             'ada juga resto abcde',

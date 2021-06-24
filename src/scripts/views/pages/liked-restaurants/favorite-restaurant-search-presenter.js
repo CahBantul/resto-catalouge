@@ -17,7 +17,7 @@ class FavoriteRestaurantSearchPresenter {
     let foundRestaurants;
     if (this.latestQuery.length > 0) {
       foundRestaurants = await this._favoriteRestaurants.searchRestaurants(
-        this.latestQuery
+        this.latestQuery,
       );
     } else {
       foundRestaurants = await this._favoriteRestaurants.getAllRestaurants();
@@ -31,13 +31,12 @@ class FavoriteRestaurantSearchPresenter {
 
     if (restaurants.length > 0) {
       html = restaurants.reduce(
-        (carry, restaurant) =>
-          carry.concat(
-            `<li class="restaurant"><span class="restaurant__title">${
-              restaurant.title || '-'
-            }</span></li>`
-          ),
-        ''
+        (carry, restaurant) => carry.concat(
+          `<li class="restaurant"><span class="restaurant__title">${
+            restaurant.title || '-'
+          }</span></li>`,
+        ),
+        '',
       );
     } else {
       html = '<div class="restaurants__not__found">Film tidak ditemukan</div>';
