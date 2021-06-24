@@ -1,9 +1,11 @@
 import FavoriteRestaurant from '../src/scripts/data/favorite-restaurant';
 import FavoriteRestaurantSearchPresenter from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-search-presenter';
+import FavoriteRestaurantSearchView from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-search-view';
 
 describe('Searching restaurants', () => {
   let presenter;
   let favoriteRestaurants;
+  let view;
 
   const searchRestaurants = (query) => {
     const queryElement = document.getElementById('query');
@@ -12,21 +14,15 @@ describe('Searching restaurants', () => {
   };
 
   const setRestaurantSearchContainer = () => {
-    document.body.innerHTML = `
-        <div id="restaurant-search-container">
-            <input id="query" type="text">
-            <div class="restaurant-result-container">
-                <ul class="restaurants">
-                </ul>
-            </div>
-        </div>
-        `;
+    view = new FavoriteRestaurantSearchView();
+    document.body.innerHTML = view.getTemplate();
   };
 
   const constructPresenter = () => {
     favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurant);
     presenter = new FavoriteRestaurantSearchPresenter({
       favoriteRestaurants,
+      view,
     });
   };
 
@@ -46,7 +42,7 @@ describe('Searching restaurants', () => {
       searchRestaurants('resto a');
 
       expect(favoriteRestaurants.searchRestaurants).toHaveBeenCalledWith(
-        'resto a',
+        'resto a'
       );
     });
 
@@ -75,7 +71,7 @@ describe('Searching restaurants', () => {
         },
       ]);
       expect(
-        document.querySelectorAll('.restaurant__title').item(0).textContent,
+        document.querySelectorAll('.restaurant__title').item(0).textContent
       ).toEqual('Satu');
     });
 
@@ -87,7 +83,7 @@ describe('Searching restaurants', () => {
         },
       ]);
       expect(
-        document.querySelectorAll('.restaurant__title').item(0).textContent,
+        document.querySelectorAll('.restaurant__title').item(0).textContent
       ).toEqual('Satu');
 
       presenter._showFoundRestaurants([
@@ -110,7 +106,7 @@ describe('Searching restaurants', () => {
       presenter._showFoundRestaurants([{ id: 1 }]);
 
       expect(
-        document.querySelectorAll('.restaurant__title').item(0).textContent,
+        document.querySelectorAll('.restaurant__title').item(0).textContent
       ).toEqual('-');
     });
 
@@ -146,13 +142,14 @@ describe('Searching restaurants', () => {
       document
         .getElementById('restaurant-search-container')
         .addEventListener('restaurants:searched:updated', () => {
-          const restaurantTitles = document.querySelectorAll('.restaurant__title');
+          const restaurantTitles =
+            document.querySelectorAll('.restaurant__title');
           expect(restaurantTitles.item(0).textContent).toEqual('resto abc');
           expect(restaurantTitles.item(1).textContent).toEqual(
-            'ada juga resto abcde',
+            'ada juga resto abcde'
           );
           expect(restaurantTitles.item(2).textContent).toEqual(
-            'ini juga boleh resto a',
+            'ini juga boleh resto a'
           );
 
           done();
@@ -207,7 +204,7 @@ describe('Searching restaurants', () => {
         .getElementById('restaurant-search-container')
         .addEventListener('restaurants:searched:updated', () => {
           expect(
-            document.querySelectorAll('.restaurants__not__found').length,
+            document.querySelectorAll('.restaurants__not__found').length
           ).toEqual(1);
           done();
         });
