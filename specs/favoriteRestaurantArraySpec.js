@@ -32,18 +32,16 @@ const FavoriteRestaurantArray = {
     // cara boros menghapus restaurant dengan meng-copy restaurant yang ada
     // kecuali restaurant dengan id == id
     favoriteRestaurants = favoriteRestaurants.filter(
-      (restaurant) => restaurant.id !== id,
+      (restaurant) => restaurant.id !== id
     );
   },
 
   async searchRestaurants(query) {
     return (await this.getAllRestaurants()).filter((restaurant) => {
-      const loweredCaseRestaurantTitle = (
-        restaurant.title || '-'
-      ).toLowerCase();
+      const loweredCaseRestaurantTitle = (restaurant.name || '-').toLowerCase();
       const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(
         /\s/g,
-        '',
+        ''
       );
 
       const loweredCaseQuery = query.toLowerCase();
