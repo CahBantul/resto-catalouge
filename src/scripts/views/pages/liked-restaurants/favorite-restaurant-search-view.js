@@ -3,7 +3,7 @@ import { createRestaurantItemTemplate } from '../../templates/template-creator';
 class FavoriteRestaurantSearchView {
   getTemplate() {
     return `
-            < class="content">
+            <class="content">
               <input id="query" type="text">
               <h2 class="content__heading">Your Liked Restaurant</h2>
                   <div id="restaurants" class="restaurants">
@@ -28,7 +28,7 @@ class FavoriteRestaurantSearchView {
         ''
       );
     } else {
-      html = this._getEmptyMovieTemplate();
+      html = this._getEmptyRestaurantTemplate();
     }
 
     document.getElementById('restaurants').innerHTML = html;
@@ -38,8 +38,8 @@ class FavoriteRestaurantSearchView {
       .dispatchEvent(new Event('restaurants:updated'));
   }
 
-  _getEmptyMovieTemplate() {
-    return '<div class="restaurant-item__not__found">Film tidak ditemukan</div>';
+  _getEmptyRestaurantTemplate() {
+    return '<div class="restaurant-item__not__found">Restaurant tidak ditemukan</div>';
   }
 }
 
