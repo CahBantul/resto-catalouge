@@ -56,20 +56,20 @@ Scenario('searching restaurants', async () => {
 
   const searchQuery = titles[1].substring(1, 3);
   const matchingRestaurants = titles.filter(
-    (title) => title.indexOf(searchQuery) !== -1
+    (title) => title.indexOf(searchQuery) !== -1,
   );
 
   I.fillField('#query', searchQuery);
   I.pressKey('Enter');
 
   const visibleLikedRestaurants = await I.grabNumberOfVisibleElements(
-    '.restaurant-item'
+    '.restaurant-item',
   );
   assert.strictEqual(matchingRestaurants.length, visibleLikedRestaurants);
 
   matchingRestaurants.forEach(async (title, index) => {
     const visibleTitle = await I.grabTextFrom(
-      locate('.restaurant__title').at(index + 1)
+      locate('.restaurant__title').at(index + 1),
     );
     assert.strictEqual(title, visibleTitle);
   });

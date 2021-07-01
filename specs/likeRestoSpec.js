@@ -14,7 +14,7 @@ describe('Liking A Resto', () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     expect(
-      document.querySelector('[aria-label="like this restaurant"]')
+      document.querySelector('[aria-label="like this restaurant"]'),
     ).toBeTruthy();
   });
 
@@ -22,7 +22,7 @@ describe('Liking A Resto', () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     expect(
-      document.querySelector('[aria-label="unlike this restaurant"]')
+      document.querySelector('[aria-label="unlike this restaurant"]'),
     ).toBeFalsy();
   });
 
