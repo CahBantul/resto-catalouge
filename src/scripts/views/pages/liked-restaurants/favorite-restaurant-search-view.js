@@ -23,9 +23,8 @@ class FavoriteRestaurantSearchView {
     let html;
     if (restaurants.length) {
       html = restaurants.reduce(
-        (carry, restaurant) =>
-          carry.concat(createRestaurantItemTemplate(restaurant)),
-        ''
+        (carry, restaurant) => carry.concat(createRestaurantItemTemplate(restaurant)),
+        '',
       );
     } else {
       html = this._getEmptyRestaurantTemplate();

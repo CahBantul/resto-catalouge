@@ -31,7 +31,7 @@ describe('Showing all favorite restaurants', () => {
         .getElementById('restaurants')
         .addEventListener('restaurants:updated', () => {
           expect(
-            document.querySelectorAll('.restaurant-item__not__found').length
+            document.querySelectorAll('.restaurant-item__not__found').length,
           ).toEqual(1);
 
           done();
@@ -53,7 +53,7 @@ describe('Showing all favorite restaurants', () => {
         .getElementById('restaurants')
         .addEventListener('restaurants:updated', () => {
           expect(document.querySelectorAll('.restaurant-item').length).toEqual(
-            2
+            2,
           );
           done();
         });

@@ -32,7 +32,7 @@ const FavoriteRestaurantArray = {
     // cara boros menghapus restaurant dengan meng-copy restaurant yang ada
     // kecuali restaurant dengan id == id
     favoriteRestaurants = favoriteRestaurants.filter(
-      (restaurant) => restaurant.id !== id
+      (restaurant) => restaurant.id !== id,
     );
   },
 
@@ -41,7 +41,7 @@ const FavoriteRestaurantArray = {
       const loweredCaseRestaurantTitle = (restaurant.name || '-').toLowerCase();
       const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(
         /\s/g,
-        ''
+        '',
       );
 
       const loweredCaseQuery = query.toLowerCase();
