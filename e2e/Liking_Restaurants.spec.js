@@ -11,8 +11,17 @@ Scenario('showing empty liked restaurants', () => {
   I.see('Restaurant tidak ditemukan', '.restaurant-item__not__found');
 });
 
-Scenario('loking one restaurant', () => {
+Scenario('liking one restaurant', () => {
   const { I } = inject();
   I.see('Restaurant tidak ditemukan', '.restaurant-item__not__found');
   I.amOnPage('/');
+
+  I.seeElement('.restaurant__title a');
+  I.click(locate('.restaurant__title a').first());
+
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/like');
+  I.seeElement('.restaurant-item');
 });
