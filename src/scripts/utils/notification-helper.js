@@ -1,5 +1,5 @@
 const NotificationHelper = {
-  sendNotification({ title, options }) {
+  sendNotification({ name, options }) {
     if (!this._checkAvailability()) {
       console.log('Notification not supported in this browser');
       return;
@@ -11,7 +11,7 @@ const NotificationHelper = {
       return;
     }
 
-    this._showNotification({ title, options });
+    this._showNotification({ name, options });
   },
 
   _checkAvailability() {
@@ -34,9 +34,9 @@ const NotificationHelper = {
     }
   },
 
-  async _showNotification({ title, options }) {
+  async _showNotification({ name, options }) {
     const serviceWorkerRegistration = await navigator.serviceWorker.ready;
-    serviceWorkerRegistration.showNotification(title, options);
+    serviceWorkerRegistration.showNotification(name, options);
   },
 };
 
