@@ -15,7 +15,7 @@ describe('Showing all favorite restaurants', () => {
   });
 
   describe('When no restaurants have been liked', () => {
-    it('should ask for the favorite movies', () => {
+    it('should ask for the favorite restaurants', () => {
       const favoriteRestaurants = spyOnAllFunctions(FavoriteRestaurant);
 
       new FavoriteRestaurantShowPresenter({

@@ -37,7 +37,7 @@ describe('Liking A Resto', () => {
     FavoriteRestaurant.deleteRestaurant(1);
   });
 
-  it('should not add a movie again when its already liked', async () => {
+  it('should not add a restaurant again when its already liked', async () => {
     await TestFactories.createLikeButtonPresenterWithRestaurant({ id: 1 });
 
     // Tambahkan film dengan ID 1 ke daftar film yang disukai

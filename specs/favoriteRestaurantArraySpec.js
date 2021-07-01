@@ -52,7 +52,7 @@ const FavoriteRestaurantArray = {
   },
 };
 
-describe('Favorite Movie Array Contract Test Implementation', () => {
+describe('Favorite Restaurant Array Contract Test Implementation', () => {
   afterEach(() => (favoriteRestaurants = []));
 
   itActsAsFavoriteRestaurantModel(FavoriteRestaurantArray);

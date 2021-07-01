@@ -13,11 +13,11 @@ const Like = {
   async afterRender() {
     new FavoriteRestaurantShowPresenter({
       view,
-      favoriteMovies: FavoriteRestaurant,
+      favoriteRestaurants: FavoriteRestaurant,
     });
     new FavoriteRestaurantSearchPresenter({
       view,
-      favoriteMovies: FavoriteRestaurant,
+      favoriteRestaurants: FavoriteRestaurant,
     });
   },
 };
